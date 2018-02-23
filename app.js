@@ -1,19 +1,19 @@
-var express = 			require('express');
-var path = 					require('path');
-var favicon = 			require('serve-favicon');
-var logger = 				require('morgan');
-var cookieParser = 	require('cookie-parser');
-var bodyParser = 		require('body-parser');
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
-var index = 	require('./routes/index');
-var users = 	require('./routes/users');
+var index = require('./routes/index');
+var users = require('./routes/users');
 var catalog = require('./routes/catalog'); // import routes for catalog area of site
 
 var app = express();
 
 // set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://admin:peterPan@ds245218.mlab.com:45218/local_library';
+
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
